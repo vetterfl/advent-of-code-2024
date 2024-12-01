@@ -2,14 +2,13 @@
 #include <stdlib.h>
 #include "input.h"
 
-
-void bubbleSort(int arr[], int n) {
+void bubbleSort(int arr[], int n)
+{
     int temp;
     for (int i = 0; i < n-1; i++) {
         int swapped = 0;
         for (int j = 0; j < n-i-1; j++) {
             if (arr[j] > arr[j+1]) {
-                // Swap elements if they are in the wrong order
                 temp = arr[j];
                 arr[j] = arr[j+1];
                 arr[j+1] = temp;
@@ -22,9 +21,10 @@ void bubbleSort(int arr[], int n) {
     }
 }
 
-int main() {
+int main()
+{
 
-  printf("Hello AoC Day 1\n\n");
+  printf("** Hello Advent of Code 2024 - Day 1\n\nPart I - Calculating the difference between items:\n");
 
   int len = sizeof(left) / sizeof(left[0]);
   // sort left numbers
@@ -33,15 +33,15 @@ int main() {
   bubbleSort(right, len);
 
   int sum = 0;
-  // print numbers side by side
+  // adding up the numbers 
   for (int i = 0; i < len; i++) {
     sum += abs(left[i]-right[i]);
     //printf("%d\t%d distance: %d\n", left[i], right[i], abs(left[i] - right[i]) );
   }
 
-  printf("Sum of the differences: %d\n", sum);
+  printf("Sum of the differences: %d\n\n", sum);
 
-  printf("Now calculating the similarity score:\n");
+  printf("Part II - Now calculating the similarity score:\n");
   sum = 0;
   for (int i = 0; i < len; i++) {
     int count = 0;  
@@ -53,8 +53,6 @@ int main() {
   }
 
   printf("Similarity score: %d\n", sum);
-
-
 
   return 0;
 }
